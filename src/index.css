@@ -1,13 +1,143 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* DONT FUCKING LOOK INTO THE CSS SOURCES */
+
+:root {
+  box-sizing: border-box;
+  --shadow-default: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --pink: #f80084;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::before, ::after, * {
+  box-sizing: inherit;
+}
+
+h1 {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+  color: inherit;
+  font-size: 1em;
+  font-weight: inherit;
+  cursor: default;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  background-color: var(--pink);
+  color: rgb(248, 248, 248);
+  font-family: inherit;
+  font-weight: bold;
+  padding: 0.25em;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  color: rgb(90, 90, 90);
+}
+
+header {
+  padding: 1em 2em;
+  box-shadow: var(--shadow-default);
+}
+
+hr {
+  border: 0.5px solid rgb(245, 245, 245);
+}
+
+.container {
+  max-width: clamp(420px, 75%, 520px);
+  margin: 1em auto;
+  box-shadow: var(--shadow-default);
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5em;
+}
+
+.container > form {
+  margin-top: auto;
+  padding: 1em;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-fields > * + * {
+  margin-top: 1em;
+}
+
+input, textarea {
+  outline: none;
+  padding: 0.1em 0.2em;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.form-fields > button {
+  width: 60px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: 59vh;
+  overflow-y: auto;
+}
+
+li {
+  padding: 0.75em 1em;
+  margin: 1em;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 1em;
+  font-size: 1.1em;
+  transition: 0.3s all 0s;
+}
+
+li:hover {
+  background-color: var(--pink);
+  color: rgb(230, 230, 230);
+  border: 1px solid transparent;
+  transform: scale(1.025);
+}
+
+li.green:hover {
+  background-color: rgb(51, 100, 2);
+}
+
+li button {
+  min-width: 60px;
+  transition: 0.3s all 0s;
+  padding: 0.4em;
+}
+
+li.green button {
+  background-color: rgb(51, 100, 2);
+}
+
+li button + button {
+  margin-left: 1em;
+}
+
+li:hover button {
+  background-color: rgb(233, 233, 233);
+  color: grey;
+}
+
+
+li input, textarea {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  width: 100%;
+}
+
+li textarea {
+  margin: 1em 0em;
 }
